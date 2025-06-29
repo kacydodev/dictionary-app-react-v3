@@ -7,8 +7,12 @@ export const ThemeContext = createContext({
 	setFont: () => {},
 	theme: '',
 	setTheme: () => {},
-	themeIcon: '',
 });
+
+export const isDarkMode =
+	localStorage.theme === 'dark' ||
+	(!('theme' in localStorage) &&
+		window.matchMedia('(prefers-color-scheme: dark)').matches);
 
 export const FONTS = [
 	{ name: 'Serif', ref: 'font-serif' },
