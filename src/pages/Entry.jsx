@@ -5,7 +5,7 @@ import Error from '../components/Error';
 import EntryHeader from '../components/EntryHeader';
 import EntryDefinition from '../components/EntryDefinition';
 
-export default function Entry() {
+export default function Entry({ setSearchInput }) {
 	const { query } = useParams();
 
 	const { isLoading, isSuccess, isError, error, data } = useFetch(query);
@@ -17,7 +17,9 @@ export default function Entry() {
 	return (
 		<article className='space-y-6'>
 			{isSuccess && <EntryHeader data={data[0]} />}
-			{isSuccess && <EntryDefinition data={data[0]} />}
+			{isSuccess && (
+				<EntryDefinition data={data[0]} setSearchInput={setSearchInput} />
+			)}
 		</article>
 	);
 }

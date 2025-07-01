@@ -1,11 +1,11 @@
-import { useState } from 'react';
 import searchIcon from '../assets/images/icon-search.svg';
 import { Input } from '@headlessui/react';
 import { useNavigate } from 'react-router';
 
-export default function Search() {
-	const [input, setInput] = useState('');
-
+export default function Search({
+	searchInput: input,
+	setSearchInput: setInput,
+}) {
 	const navigate = useNavigate();
 
 	function handleSubmit(e) {

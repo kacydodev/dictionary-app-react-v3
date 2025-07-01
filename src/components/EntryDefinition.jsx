@@ -1,6 +1,9 @@
 import EntrySynonym from './EntrySynonym';
 
-export default function EntryDefinition({ data: { meanings } }) {
+export default function EntryDefinition({
+	data: { meanings },
+	setSearchInput,
+}) {
 	return (
 		<>
 			{meanings.map(
@@ -25,8 +28,18 @@ export default function EntryDefinition({ data: { meanings } }) {
 								<li>{definition}</li>
 								{example && <q className='ml-3 text-slate-500'>{example}</q>}
 							</ul>
-							{(synonyms.length > 0 && <EntrySynonym synonyms={synonyms} />) ||
-								(antonyms.length > 0 && <EntrySynonym antonyms={antonyms} />)}
+							{(synonyms.length > 0 && (
+								<EntrySynonym
+									synonyms={synonyms}
+									setSearchInput={setSearchInput}
+								/>
+							)) ||
+								(antonyms.length > 0 && (
+									<EntrySynonym
+										antonyms={antonyms}
+										setSearchInput={setSearchInput}
+									/>
+								))}
 						</div>
 					);
 				}

@@ -3,14 +3,12 @@ import { isDarkMode, ThemeContext } from '../ultils/ultils';
 import { Routes, Route } from 'react-router';
 import Home from './pages/Home';
 import Entry from './pages/Entry';
-import Error from './components/Error';
 import NotFound from './pages/404';
 
 export default function App() {
 	const [font, setFont] = useState('font-mono');
 	const [theme, setTheme] = useState(isDarkMode ? 'dark' : 'light');
-
-	// const { isLoading, isSuccess, isError, error, data } = useFetch(query);
+	const [searchInput, setSearchInput] = useState('');
 
 	useEffect(() => {
 		const rootElement = document.getElementsByTagName('html')[0];
@@ -33,8 +31,21 @@ export default function App() {
 			value={{ font: font, setFont: setFont, theme: theme, setTheme: setTheme }}
 		>
 			<Routes>
-				<Route path='/' element={<Home />}>
-					<Route path='lookup/:query' element={<Entry />} />
+				<Route
+					path='/'
+					element={
+						<Home searchInput={searchInput} setSearchInput={setSearchInput} />
+					}
+				>
+					<Route
+						path='lookup/:query'
+						element={
+							<Entry
+								searchInput={searchInput}
+								setSearchInput={setSearchInput}
+							/>
+						}
+					/>
 					<Route path='*' element={<NotFound />} />
 				</Route>
 			</Routes>

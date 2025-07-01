@@ -5,14 +5,14 @@ import Header from '../components/Header';
 import Search from '../components/Search';
 import Footer from '../components/Footer';
 
-export default function Home() {
+export default function Home({ searchInput, setSearchInput }) {
 	const { font } = useContext(ThemeContext);
 
 	return (
 		<>
 			<Header />
 			<main className={`grow space-y-12 ${font}`}>
-				<Search />
+				<Search searchInput={searchInput} setSearchInput={setSearchInput} />
 				<Outlet />
 			</main>
 			<Footer />
