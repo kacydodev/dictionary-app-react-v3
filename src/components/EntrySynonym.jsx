@@ -1,7 +1,7 @@
 import { Link, useNavigate } from 'react-router';
 
 export default function EntrySynonym({ synonyms, antonyms, setSearchInput }) {
-	const navigate = useNavigate();
+	let navigate = useNavigate();
 
 	function displaySynonyms(arr) {
 		return (
@@ -11,10 +11,7 @@ export default function EntrySynonym({ synonyms, antonyms, setSearchInput }) {
 				// Map words and add hyperlink
 				.map((word) => (
 					<button
-						onClick={() => {
-							setSearchInput(word);
-							navigate(`/lookup/${word}`);
-						}}
+						onClick={() => navigate(`/lookup/${word}`, setSearchInput(word))}
 						key={word}
 						className='text-lavender'
 					>
