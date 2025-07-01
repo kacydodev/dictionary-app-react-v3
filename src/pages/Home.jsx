@@ -10,7 +10,7 @@ export default function Home({ searchInput, setSearchInput }) {
 
 	return (
 		<>
-			<Header />
+			<Header setSearchInput={setSearchInput} />
 			<main className={`grow space-y-12 ${font}`}>
 				<Search searchInput={searchInput} setSearchInput={setSearchInput} />
 				<Outlet />

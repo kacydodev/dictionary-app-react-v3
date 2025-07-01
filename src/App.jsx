@@ -46,7 +46,10 @@ export default function App() {
 							/>
 						}
 					/>
-					<Route path='*' element={<NotFound />} />
+					<Route
+						path='*'
+						element={<NotFound setSearchInput={setSearchInput} />}
+					/>
 				</Route>
 			</Routes>
 		</ThemeContext>
