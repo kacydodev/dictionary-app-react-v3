@@ -13,7 +13,7 @@ export default function EntrySynonym({ synonyms, antonyms, setSearchInput }) {
 					<button
 						onClick={() => navigate(`/lookup/${word}`, setSearchInput(word))}
 						key={word}
-						className='text-lavender'
+						className=''
 					>
 						{word}
 					</button>

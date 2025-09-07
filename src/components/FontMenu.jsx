@@ -19,7 +19,7 @@ export default function FontMenu() {
 			</MenuButton>
 			<MenuItems
 				anchor='bottom'
-				className={`flex flex-col items-start rounded  bg-white shadow dark:bg-lavender dark:text-white ${font}`}
+				className={`flex flex-col items-start rounded  bg-white shadow dark:bg-primary dark:text-white ${font}`}
 			>
 				{fontOptions.map(({ name: label, ref }) => (
 					<MenuItem key={ref}>

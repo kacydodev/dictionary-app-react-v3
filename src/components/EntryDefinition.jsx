@@ -19,9 +19,7 @@ export default function EntryDefinition({
 					return (
 						<div key={partOfSpeech + idx} className='space-y-6'>
 							<fieldset className='border-t-1 border-slate-200 dark:border-slate-800'>
-								<legend className='text-lg font-bold italic'>
-									{partOfSpeech}
-								</legend>
+								<legend className='text-lg  italic'>{partOfSpeech}</legend>
 							</fieldset>
 							<h3 className='list-none text-lg text-slate-500'>Meaning</h3>
 							<ul className='ml-4 space-y-3 list-disc list-inside'>

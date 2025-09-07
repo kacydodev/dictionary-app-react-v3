@@ -22,7 +22,7 @@ export default function Search({
 				type='text'
 				value={input}
 				onChange={(e) => setInput(e.target.value)}
-				className='w-full px-4 py-2 rounded-md bg-slate-200 text-black active:border-lavender focus:border-lavender focus:outline-lavender dark:bg-slate-900 dark:text-white'
+				className='w-full px-4 py-2 rounded-md bg-slate-200 text-black active:border-primary focus:border-primary focus:outline-primary dark:bg-slate-900 dark:text-white'
 			/>
 		</form>
 	);

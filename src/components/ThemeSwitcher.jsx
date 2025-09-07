@@ -13,7 +13,7 @@ export default function ThemeSwitcher() {
 			<Switch
 				checked={isDarkTheme ? true : false}
 				onChange={() => (isDarkTheme ? setTheme('light') : setTheme('dark'))}
-				className='group inline-flex h-6 w-11 items-center rounded-full bg-slate-400 transition data-checked:bg-lavender'
+				className='group inline-flex h-6 w-11 items-center rounded-full bg-slate-400 transition data-checked:bg-primary'
 			>
 				<span className='size-4 translate-x-1 rounded-full bg-white transition group-data-checked:translate-x-6' />
 			</Switch>

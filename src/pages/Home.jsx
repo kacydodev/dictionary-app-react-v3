@@ -11,7 +11,7 @@ export default function Home({ searchInput, setSearchInput }) {
 	return (
 		<>
 			<Header setSearchInput={setSearchInput} />
-			<main className={`grow space-y-12 ${font}`}>
+			<main className={`grow space-y-12 mb-12 ${font}`}>
 				<Search searchInput={searchInput} setSearchInput={setSearchInput} />
 				<Outlet />
 			</main>
